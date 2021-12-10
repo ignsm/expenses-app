@@ -3,8 +3,8 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   const defaultUserInput = {
-    enteredTitle: "Test data",
-    enteredAmount: 9.99,
+    enteredTitle: "",
+    enteredAmount: 0.99,
     enteredDate: "2021-12-10",
   };
 

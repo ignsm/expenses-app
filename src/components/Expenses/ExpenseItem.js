@@ -5,10 +5,9 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
 function ExpenseItem(props) {
-  const [expenseTitle] = useState(props.expenseDetails.title);
-
-  const expenseDate = props.expenseDetails.date;
-  const expensePrice = props.expenseDetails.amount;
+  const expenseTitle = props.title;
+  const expenseDate = props.date;
+  const expensePrice = props.amount;
 
   return (
     <Card className="expense-item">
