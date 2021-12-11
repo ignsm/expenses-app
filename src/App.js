@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ExpensesList from "./components/Expenses/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const INITIAL_EXPENSES = [
@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <NewExpense onNewExpense={addNewExpense} />
-      <ExpensesList
+      <Expenses
         expenses={expenses}
       />
     </>
