@@ -3,11 +3,11 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
-  const [showForm, setShowForm] = useState(false);
+  const [isShowingForm, setIsShowingForm] = useState(false);
 
   const toggleForm = () => {
-    const result = showForm ? false : true;
-    setShowForm(result);
+    const result = isShowingForm ? false : true;
+    setIsShowingForm(result);
   };
 
   const submitForm = (enteredExpenseData) =>
@@ -15,8 +15,8 @@ const NewExpense = (props) => {
 
   return (
     <div className="new-expense">
-      {showForm || <button onClick={toggleForm}>Create expense</button>}
-      {showForm && <ExpenseForm onFormSubmit={submitForm} onCancel={toggleForm} />}
+      {isShowingForm || <button onClick={toggleForm}>Create expense</button>}
+      {isShowingForm && <ExpenseForm onFormSubmit={submitForm} onCancel={toggleForm} />}
     </div>
   );
 };
