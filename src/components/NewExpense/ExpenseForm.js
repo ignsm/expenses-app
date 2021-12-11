@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
+  const today = (new Date()).toISOString().substring(0, 10);
+
   const defaultUserInput = {
     enteredTitle: "",
     enteredAmount: 0.99,
-    enteredDate: "2021-12-10",
+    enteredDate: today,
   };
 
   const [userInput, setUserInput] = useState(defaultUserInput);
@@ -37,6 +39,11 @@ const ExpenseForm = (props) => {
     const title = userInput.enteredTitle;
     const amount = parseFloat(userInput.enteredAmount);
     const date = new Date(userInput.enteredDate);
+
+    if (!title) {
+      alert("Please, add title!");
+      return;
+    }
 
     props.onFormSubmit({ title, amount, date });
     setUserInput(defaultUserInput);
